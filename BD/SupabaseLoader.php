@@ -26,7 +26,9 @@ class SupabaseLoader {
         if (!$result) {
             die("Erreur de requête");
         }
-        
+        else {
+            echo "La requête à bien été prise en compte !"
+        }
         pg_close($connection);
     }
 }
