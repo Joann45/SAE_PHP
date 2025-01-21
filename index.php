@@ -9,4 +9,6 @@ AutoLoader::register();
 
 $connection = SupabaseLoader::getConnection();
 
-SupasbaseLoader::query($connection, "INSERT INTO USER VALUES (1, 'test', 'test', 'test', 'test', 'test')");
+SupabaseLoader::query($connection, "INSERT INTO utilisateur VALUES (1, 'test', 'test', 'test', 'test', 'test')");
+
+?>
