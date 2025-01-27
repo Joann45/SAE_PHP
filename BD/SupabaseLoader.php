@@ -6,30 +6,31 @@ class SupabaseLoader {
 
     public static function getConnection(){
         $password = 'nOIWUSLNVFS5i9BX'; 
-
-        $host = 'db.uqphmrdxocqjbcbucdju.supabase.co';
-        $port = '5432';
+        $host = 'aws-0-eu-west-3.pooler.supabase.com';
+        $port = '6543';
         $dbname = 'postgres';
-        $user = 'postgres';
+        $user = 'postgres.uqphmrdxocqjbcbucdju ';
 
-        $connectionString = "host=$host port=$port dbname=$dbname user=$user password=$password";
-        $connection = pg_connect($connectionString);
-        if (!$connection) {
-            die("La connexion à la base de données a échoué");
+        $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+        
+        try {
+            self::$connection = new \PDO($dsn, $user, $password);
+            self::$connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            echo "Connexion à la base de données réussie !";
+        } catch (\PDOException $e) {
+            die("La connexion à la base de données a échoué: " . $e->getMessage());
         }
-        return $connection;
+        
+        return self::$connection;
     }
 
     public static function query($connection, $request){
-        $result = pg_query($connection, $request);
-        
-        if (!$result) {
-            die("Erreur de requête");
+        try {
+            $result = $connection->query($request);
+            echo "La requête a bien été prise en compte !";
+        } catch (\PDOException $e) {
+            die("Erreur de requête: " . $e->getMessage());
         }
-        else {
-            echo "La requête à bien été prise en compte !";
-        }
-        pg_close($connection);
     }
 }
 
