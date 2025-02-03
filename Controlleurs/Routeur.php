@@ -4,7 +4,7 @@ namespace Controlleurs;
 
 class Routeur{
     public function handleRequest(){
-        $data = $SERVER['REQUEST_URI'];
+        $data = $_SERVER['REQUEST_URI'];
 
         switch($data){
             case '/':
