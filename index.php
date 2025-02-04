@@ -10,11 +10,12 @@ use Controlleurs\Routeur;
 
 AutoLoader::register();
 
-$connection = SupabaseLoader::getConnection();
+//$connection = SupabaseLoader::getConnection();
 
 //SupabaseLoader::query($connection, "INSERT INTO utilisateur VALUES (1, 'test', 'test', 'test', 'test', 'test')");
 
 $routeur = new Routeur();
+var_dump($routeur);
 $routeur->handleRequest();
 
 ?>

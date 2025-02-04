@@ -16,6 +16,9 @@ class Routeur{
             case '/avis_user':
                 require_once VIEWS_PATH . '/avis_user.php';
                 break;
+            case '/404':
+                require_once VIEWS_PATH . '/404.php';
+                break;
             default:
                 require_once VIEWS_PATH . '/404.php';
                 break;
