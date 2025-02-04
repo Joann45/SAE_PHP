@@ -18,6 +18,7 @@ class SupabaseLoader {
             try {
                 $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
                 self::$connection = new PDO($dsn, $user, $password);
+                error_log("Connexion à la base de données réussie !");
             } catch (PDOException $e) {
                 die("Erreur de connexion à la base de données : " . $e->getMessage());
             }

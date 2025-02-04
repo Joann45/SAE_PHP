@@ -13,6 +13,12 @@ class Routeur{
             case '/connexion':
                 require_once VIEWS_PATH . '/connexion.php';
                 break;
+            case '/inscription':
+                require_once VIEWS_PATH . '/inscription.php';
+                break;
+            case '/controlleur_connexion':
+                require_once MODELS_PATH . '/controlleur_connexion.php';
+                break;
             case '/avis_user':
                 require_once VIEWS_PATH . '/avis_user.php';
                 break;
