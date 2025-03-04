@@ -1,7 +1,6 @@
 <?php
 
 use \BD\SupabaseLoader;
-
 $pdo = SupabaseLoader::getConnection();
 $email = $_POST['email'];
 $password = $_POST['password'];

@@ -26,17 +26,6 @@ class SupabaseLoader {
 
         return self::$connection;
     }
-
-    public static function query($connection, $sql, $params = []) {
-        try {
-            $stmt = $connection->prepare($sql);
-            $stmt->execute($params);
-            echo "La requête a bien été prise en compte !";
-            return $stmt->fetchAll();
-        } catch (PDOException $e) {
-            die("Erreur lors de l'exécution de la requête : " . $e->getMessage());
-        }
-    }
 }
 
 

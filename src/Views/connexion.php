@@ -7,6 +7,7 @@
     <body>
         <?php 
         require_once __DIR__ . "/header.php";
+        include MODELS_PATH."controlleur_connexion.php";
         ?>
         <main>
             <h1>Connexion</h1>
@@ -17,7 +18,7 @@
                 <input type="password" name="password" id="password" required>
                 <button type="submit">Se connecter</button>
             </form>
-            <p>Pas encore inscrit ? : <a href="/inscription">S'inscrire</a></p>
+            <p>Pas encore inscrit ? : <a href="/inscription"><input type="button" value="S'inscrire"></input></a></p>
         </main>
     </body>
 </html>
