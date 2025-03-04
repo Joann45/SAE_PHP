@@ -1,1 +1,1 @@
-INSERT INTO USERA VALUES ('Fournier', 'Yael','yaelfournier1@gmail.com', 'yafouuu', '0671285424' );
+INSERT INTO USERA VALUES (0,'Fournier', 'Yael','yaelfournier1@gmail.com', 'yafouuu', '0671285424' );
