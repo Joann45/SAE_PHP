@@ -10,7 +10,13 @@
         ?>
         <main>
             <h1>Inscription</h1>
-            <form action="/controlleur_connexion" method="post">
+            <form action="controlleur_inscription" method="post">
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" required>
+                <label for="prenom">Prénom</label>
+                <input type="text" name="prenom" id="prenom" required>
+                <label for="telephone">Téléphone</label>
+                <input type="tel" name="telephone" id="telephone" required>
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" required>Connexion
                 <label for="password">Mot de passe</label>

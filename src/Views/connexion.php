@@ -7,11 +7,10 @@
     <body>
         <?php 
         require_once __DIR__ . "/header.php";
-        include MODELS_PATH."controlleur_connexion.php";
         ?>
         <main>
             <h1>Connexion</h1>
-            <form action="/controlleur_connexion" method="post">
+            <form action="controlleur_connexion" method="post">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" required>
                 <label for="password">Mot de passe</label>
