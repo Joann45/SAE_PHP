@@ -22,6 +22,10 @@ class Routeur{
             case '/controlleur_inscription':
                 require_once MODELS_PATH . '/controlleur_inscription.php';
                 break;
+            case '/deconnexion':
+                require_once MODELS_PATH . '/controlleur_deconnexion.php';
+                break;
+            case '/avis':
             case '/avis_user':
                 require_once VIEWS_PATH . '/avis_user.php';
                 break;

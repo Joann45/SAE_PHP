@@ -1,6 +1,7 @@
 <header>
     <style>
         header {
+            font-family: Arial, sans-serif;
             background-color: #ff916f;
             color: white;
             padding: 15px;
@@ -37,6 +38,11 @@
             <li><a href="/"><strong>Accueil</strong></a></li>
             <li><a href="/avis_user"><strong>Avis</strong></a></li>
             <li><a href="/connexion"><strong>Connexion</strong></a></li>
+            <?php session_start();
+                if ($_SESSION['email'] !== null){
+                    echo '<li><a href="/deconnexion"><strong>Déconnexion</strong></a></li>';
+                } 
+            ?>
         </ul>
     </nav>
 </header>

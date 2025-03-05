@@ -11,6 +11,7 @@ $req->execute();
 $res = $req->fetch();
 if ($password == $res['USE_MDP']) {
     session_start();
+    $_SESSION['test'] = 'test';
     $_SESSION['email'] = $email;
     header('Location: /');
 } else {
