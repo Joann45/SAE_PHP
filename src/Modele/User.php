@@ -1,57 +1,58 @@
 <?php
-
+namespace Modele;
+use BD\DBLoader;
 class User{
 
-    private $id_user;
-    private $nom_user;
-    private $prenom_user;
-    private $email_user;
-    private $tel_user;
-    private $mdp_user;
+    private int $id_user;
+    private string $nom_user;
+    private string $prenom_user;
+    private string $email_user;
+    private string $tel_user;
+    private string $mdp_user;
 
     public function __construct($nom_user, $prenom_user, $email_user, $tel_user, $mdp_user){
-        $this->$id_user = User::getLastId();
-        $this->$nom_user = $nom_user;
-        $this->$prenom_user = $prenom_user;
-        $this->$email_user = $email_user;
-        $this->$tel_user = $tel_user;
-        $this->$mdp_user = $mdp_user;
+        $this->id_user = User::getLastId(DBLoader::getConnection());
+        $this->nom_user = $nom_user;
+        $this->prenom_user = $prenom_user;
+        $this->email_user = $email_user;
+        $this->tel_user = $tel_user;
+        $this->mdp_user = $mdp_user;
     }
 
     public static function getLastId($BD){
         $res = 0;
         $req = $BD->prepare("SELECT id_user FROM user");
         $query_res = $req->execute();
-        foreach ($r as $query_res){
-            if ($query_res > $res){
-                $res = $query_res;
+        foreach ($query_res as $row){
+            if ($row > $res){
+                $res = $row;
             }
         }
         return $res + 1; 
     }
 
     public function getId(){
-        return $this->$id_user;
+        return $this->id_user;
     }
 
     public function getNom(){
-        return $this->$nom_user;
+        return $this->nom_user;
     }
 
     public function getPrenom(){
-        return $this->$prenom_user;
+        return $this->prenom_user;
     }
 
     public function getEmail(){
-        return $this->$email_user;
+        return $this->email_user;
     }
 
     public function getTel(){
-        return $this->$tel_user;
+        return $this->tel_user;
     }
 
     public function getMdp(){
-        return $this->$mdp_user;
+        return $this->mdp_user;
     }
 
     public static function addUser($BD, $User){
