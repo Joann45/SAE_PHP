@@ -1,5 +1,5 @@
 <?php
-
+namespace Modele;
 class Avis{
     private $id;
     private $note;
