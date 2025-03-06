@@ -7,7 +7,7 @@ use PDOException;
 class SupabaseLoader {
     private static $connection = null;
 
-    public static function getConnection() {
+    public static function getConnection(): PDO {
         $password = 'nOIWUSLNVFS5i9BX'; 
         $host = 'aws-0-eu-west-3.pooler.supabase.com';
         $port = '6543';
@@ -24,17 +24,6 @@ class SupabaseLoader {
         }
 
         return self::$connection;
-    }
-
-    public static function query($connection, $sql, $params = []) {
-        try {
-            $stmt = $connection->prepare($sql);
-            $stmt->execute($params);
-            echo "La requête a bien été prise en compte !";
-            return $stmt->fetchAll();
-        } catch (PDOException $e) {
-            die("Erreur lors de l'exécution de la requête : " . $e->getMessage());
-        }
     }
 }
 
