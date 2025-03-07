@@ -6,7 +6,7 @@ class AutoLoader {
     }
 
     public static function autoload($fqcn) {
-        $file = str_replace('\\', '/', $fqcn) . '.php';
+        $file = __DIR__ . '/' . str_replace('\\', '/', $fqcn) . '.php';
 
         if (file_exists($file)) {
             require $file;
@@ -15,5 +15,3 @@ class AutoLoader {
         }
     }
 }
-
-?>
